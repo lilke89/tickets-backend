@@ -14,6 +14,7 @@ export class TicketsController {
     return await this.ticketsService.create(createTicketDto);
   }
 
+  @UseGuards(AuthGuard())
   @Get()
   async getAllTickets() {
     return await this.ticketsService.findAll();
